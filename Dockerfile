@@ -1,7 +1,7 @@
 FROM golang:wheezy
 
-RUN mkdir -p $WORKDIR
-WORKDIR $WORKDIR
+RUN mkdir -p /go/src/github.com/colldesk
+WORKDIR /go/src/github.com/colldesk
 
 RUN go get github.com/codegangsta/gin
 
