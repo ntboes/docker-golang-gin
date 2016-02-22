@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /go/src/app
+cd $WORKINGDIR
 go-wrapper download
 go-wrapper install
 #check and install gin if missing i.e. go directory was overriden or mounted
