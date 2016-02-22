@@ -34,7 +34,12 @@ web:
    - "3000:3000"
   volumes:
    - app:/go/src/app
+  environment:
+   - WORKDIR=/go/src/app
 ```
+The WORKDIR environment variable is useful if you want to link in all of your dependencies (e.g. link /go/src/) and not move your app to /go/src/app.
+Just point WORKDIR to your app e.g. WORKDIR=/go/src/github.com/yourname/yourapp/main.
+
 
 # Arguments
 All flags after the image name in the docker command are forwarded to gin, e.g to set the port of gin to 4000:
