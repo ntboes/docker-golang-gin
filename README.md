@@ -1,5 +1,9 @@
 ## Docker Image for Golang development with Gin
 ========
+This container is based on the excellent work done in ntboes/golang-gin. It deals with 2 problems I encountered:
+- the container start is slow if the volume is only making your own code available to the container. I suggest linking your entire $GOPATH/src directory, so dependencies are already available and do not need to download on startup.
+- your app had to be placed into /go/src/app or the container would not work. Now you can configure the WORKINGDIR environment variable to suit your need. The main go file has to reside in WORKINGDIR.
+
 This docker image takes advantage of [Gin](https://github.com/codegangsta/gin) in order to allow running a Go Application in a Docker container with live reloading.
 The image is based on the official golang:wheezy image.
 
